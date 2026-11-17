@@ -7,7 +7,7 @@
      title — модель (одинакова на обоих языках), sub — тип техники. Ключи товаров = data-key у <a class="slide">. */
   var I18N = {
     ka: {
-      eyebrow: 'ბეტონის ტექნიკა',
+      eyebrow: 'ENAR-ის ოფიციალური წარმომადგენელი საქართველოში',
       cta: 'ნახეთ ENAR-ის საიტზე',
       address: 'ვიქტორ კუპრაძის ქ. 20, თბილისი',
       products: 'პროდუქცია',
@@ -21,7 +21,7 @@
       }
     },
     en: {
-      eyebrow: 'Concrete equipment',
+      eyebrow: 'Official representative of ENAR in Georgia',
       cta: 'View on ENAR website',
       address: '20 Viktor Kupradze St, Tbilisi',
       products: 'Products',
