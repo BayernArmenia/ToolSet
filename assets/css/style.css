@@ -71,24 +71,14 @@ html:lang(ka) .caption__eyebrow span { letter-spacing: .04em; font-size: 12.5px;
 }
 
 .logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  display: block;
+  transition: opacity .3s;
 }
-.logo__mark {
-  width: 34px;
-  height: 34px;
-  color: var(--accent);
-  stroke-width: 2.4;
-  transition: transform .8s var(--ease);
+.logo img {
+  height: clamp(22px, 3.4vh, 30px);
+  width: auto;
 }
-.logo:hover .logo__mark { transform: rotate(60deg); }
-.logo__word {
-  font: 500 23px/1 var(--f-display);
-  letter-spacing: .2em;
-  color: var(--text);
-}
-.logo__word b { font-weight: 700; }
+.logo:hover { opacity: .85; }
 
 /* Переключатель языка KA / EN — справа в шапке, логотип остаётся по центру */
 .lang {
@@ -539,8 +529,7 @@ html:lang(ka) .caption__eyebrow span { letter-spacing: .04em; font-size: 12.5px;
 }
 
 @media (max-width: 560px) {
-  .logo__word { font-size: 20px; }
-  .logo__mark { width: 30px; height: 30px; }
+  .logo img { height: 20px; }
   .top { justify-content: flex-start; }
   .lang__btn { min-width: 34px; height: 28px; padding: 0 8px; }
   .caption__eyebrow img { width: 64px; }
