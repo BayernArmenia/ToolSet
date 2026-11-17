@@ -3,6 +3,40 @@
 (function () {
   'use strict';
 
+  /* ---------- Тексты: грузинский (ka) и английский (en) ----------
+     title — название товара, sub — назначение. Ключи товаров = data-key у <a class="slide">. */
+  var I18N = {
+    ka: {
+      eyebrow: 'ბეტონის ტექნიკა',
+      cta: 'ნახეთ ENAR-ის საიტზე',
+      address: 'თბილისი, საქართველო',
+      products: 'პროდუქცია',
+      items: {
+        pump:     { title: 'წყლის ტუმბო',                    sub: 'წყლის გადატუმბვა' },
+        vibrator: { title: 'ბეტონის სიღრმული ვიბრატორი',     sub: 'ბეტონის ვიბრირება' },
+        screed:   { title: 'ვიბრაციული ლარტყა',              sub: 'ზედაპირის მოსწორება' },
+        portable: { title: 'პორტატული ვიბრატორი',            sub: 'ბეტონის ვიბრირება' },
+        trowel:   { title: 'ბეტონის მოსაპრიალებელი მანქანა', sub: 'ზედაპირის მოპრიალება' },
+        float:    { title: 'ბეტონის ხელის სალესი',           sub: 'ზედაპირის მოსწორება' }
+      }
+    },
+    en: {
+      eyebrow: 'Concrete equipment',
+      cta: 'View on ENAR website',
+      address: 'Tbilisi, Georgia',
+      products: 'Products',
+      items: {
+        pump:     { title: 'Water pump',                 sub: 'Water pumping' },
+        vibrator: { title: 'Internal concrete vibrator', sub: 'Concrete vibration' },
+        screed:   { title: 'Vibrating screed',           sub: 'Surface levelling' },
+        portable: { title: 'Portable vibrator',          sub: 'Concrete vibration' },
+        trowel:   { title: 'Power trowel',               sub: 'Surface finishing' },
+        float:    { title: 'Bull float',                 sub: 'Surface levelling' }
+      }
+    }
+  };
+  var lang = document.documentElement.lang === 'en' ? 'en' : 'ka';
+
   var stage = document.getElementById('stage');
   var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
   var progress = document.querySelector('.progress');
@@ -25,7 +59,6 @@
     var b = document.createElement('button');
     b.type = 'button';
     b.setAttribute('role', 'tab');
-    b.setAttribute('aria-label', slide.dataset.sub);
     b.addEventListener('click', function () { go(i); });
     progress.appendChild(b);
     return b;
@@ -65,8 +98,7 @@
     var nextImg = slides[(current + 1) % slides.length].querySelector('img');
     if (nextImg && nextImg.loading === 'lazy') nextImg.loading = 'eager';
 
-    setText(titleEl, s.dataset.title);
-    setText(subEl, s.dataset.sub);
+    renderCaption();
     curEl.textContent = pad(current + 1);
     ctaEl.href = s.href;
 
@@ -80,7 +112,46 @@
     bars[current].classList.add('is-active');
   }
 
+  function product(slide) { return I18N[lang].items[slide.dataset.key] || { title: '', sub: '' }; }
+
+  function renderCaption() {
+    var p = product(slides[current]);
+    setText(titleEl, p.title);
+    setText(subEl, p.sub);
+  }
+
+  // Применить язык: статичные тексты, alt/aria у товаров, кнопки KA/EN
+  function applyLang(next, save) {
+    lang = next === 'en' ? 'en' : 'ka';
+    document.documentElement.lang = lang;
+    var t = I18N[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      if (t[el.dataset.i18n] != null) el.textContent = t[el.dataset.i18n];
+    });
+    slides.forEach(function (s, i) {
+      var p = product(s);
+      s.querySelector('img').alt = 'ENAR — ' + p.title;
+      bars[i].setAttribute('aria-label', p.title);
+    });
+    progress.setAttribute('aria-label', t.products);
+    document.querySelectorAll('.lang__btn').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
+    });
+    if (save) {
+      try { localStorage.setItem('toolset-lang', lang); } catch (e) {}
+    }
+  }
+
+  document.querySelectorAll('.lang__btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b.dataset.lang === lang) return;
+      applyLang(b.dataset.lang, true);
+      renderCaption();
+    });
+  });
+
   slides.forEach(function (s, i) { if (i) s.setAttribute('tabindex', '-1'); });
+  applyLang(lang, false);
   go(0, true);
 
   // Пауза, пока курсор на витрине или вкладка скрыта
