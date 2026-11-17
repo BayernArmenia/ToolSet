@@ -4,7 +4,7 @@
   'use strict';
 
   /* ---------- Тексты: грузинский (ka) и английский (en) ----------
-     title — название товара, sub — назначение. Ключи товаров = data-key у <a class="slide">. */
+     title — модель (одинакова на обоих языках), sub — тип техники. Ключи товаров = data-key у <a class="slide">. */
   var I18N = {
     ka: {
       eyebrow: 'ბეტონის ტექნიკა',
@@ -12,12 +12,12 @@
       address: 'ვიქტორ კუპრაძის ქ. 20, თბილისი',
       products: 'პროდუქცია',
       items: {
-        pump:     { title: 'წყლის ტუმბო',                    sub: 'წყლის გადატუმბვა' },
-        vibrator: { title: 'ბეტონის სიღრმული ვიბრატორი',     sub: 'ბეტონის ვიბრირება' },
-        screed:   { title: 'ვიბრაციული ლარტყა',              sub: 'ზედაპირის მოსწორება' },
-        portable: { title: 'პორტატული ვიბრატორი',            sub: 'ბეტონის ვიბრირება' },
-        trowel:   { title: 'ბეტონის მოსაპრიალებელი მანქანა', sub: 'ზედაპირის მოპრიალება' },
-        float:    { title: 'ბეტონის ხელის სალესი',           sub: 'ზედაპირის მოსწორება' }
+        zen:     { title: 'ZEN-L',        sub: 'ერთმიმართულებიანი ვიბროფილა' },
+        ren:     { title: 'REN 655',      sub: 'ჰიდრავლიკური ვიბრაციული სატკეპნი' },
+        ispyder: { title: 'i-SPYDER',     sub: 'მაღალი სიხშირის ელექტრონული გარდამქმნელი' },
+        dingo:   { title: 'DINGO',        sub: 'ექსცენტრიკული ელექტრო ვიბრატორი' },
+        tornado: { title: 'TORNADO',      sub: 'მსუბუქი ვიბრაციული ლარტყა' },
+        tifon:   { title: 'TIFON E\u2060-\u2060BATT', sub: 'აკუმულატორული მოსაპრიალებელი მანქანა' }
       }
     },
     en: {
@@ -26,12 +26,12 @@
       address: '20 Viktor Kupradze St, Tbilisi',
       products: 'Products',
       items: {
-        pump:     { title: 'Water pump',                 sub: 'Water pumping' },
-        vibrator: { title: 'Internal concrete vibrator', sub: 'Concrete vibration' },
-        screed:   { title: 'Vibrating screed',           sub: 'Surface levelling' },
-        portable: { title: 'Portable vibrator',          sub: 'Concrete vibration' },
-        trowel:   { title: 'Power trowel',               sub: 'Surface finishing' },
-        float:    { title: 'Bull float',                 sub: 'Surface levelling' }
+        zen:     { title: 'ZEN-L',        sub: 'Single-direction vibratory plate' },
+        ren:     { title: 'REN 655',      sub: 'Hydraulic vibrating roller' },
+        ispyder: { title: 'i-SPYDER',     sub: 'High-frequency electronic converter' },
+        dingo:   { title: 'DINGO',        sub: 'Eccentric electric vibrator' },
+        tornado: { title: 'TORNADO',      sub: 'Light vibrating screed' },
+        tifon:   { title: 'TIFON E\u2060-\u2060BATT', sub: 'Battery power trowel' }
       }
     }
   };
@@ -130,7 +130,7 @@
     });
     slides.forEach(function (s, i) {
       var p = product(s);
-      s.querySelector('img').alt = 'ENAR — ' + p.title;
+      s.querySelector('img').alt = 'ENAR ' + p.title + ' — ' + p.sub;
       bars[i].setAttribute('aria-label', p.title);
     });
     progress.setAttribute('aria-label', t.products);

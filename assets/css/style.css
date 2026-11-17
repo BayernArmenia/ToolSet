@@ -201,11 +201,11 @@ html:lang(ka) .caption__eyebrow span { letter-spacing: .04em; font-size: 12.5px;
 }
 
 .caption__title {
-  font: 600 clamp(32px, min(4.6vw, 8vh), 74px)/1.04 var(--f-display);
-  letter-spacing: -.005em;
+  font: 600 clamp(44px, min(6.4vw, 12vh), 110px)/1 var(--f-display);
+  letter-spacing: -.01em;
   overflow: hidden;
   padding-bottom: .06em;
-  min-height: 2.2em;
+  min-height: 1.1em;
   display: flex;
   align-items: flex-end;
 }
@@ -213,7 +213,9 @@ html:lang(ka) .caption__eyebrow span { letter-spacing: .04em; font-size: 12.5px;
 
 .caption__sub {
   color: var(--accent);
-  margin-top: 12px;
+  margin-top: 14px;
+  font-size: 13px;
+  min-height: 2.8em;
   overflow: hidden;
 }
 .caption__sub span { display: block; }
@@ -513,9 +515,9 @@ html:lang(ka) .caption__eyebrow span { letter-spacing: .04em; font-size: 12.5px;
   .caption__eyebrow { margin-bottom: 12px; }
   .caption__index { display: none; }
   .caption__title {
-    min-height: 2.1em;
+    min-height: 1.1em;
     justify-content: center;
-    font-size: clamp(26px, 7.4vw, 44px);
+    font-size: clamp(38px, 12vw, 60px);
   }
   .caption__sub { margin-top: 6px; }
   .caption__cta { margin-top: 10px; padding-top: 8px; }
