@@ -1,5 +1,9 @@
 # TOOLSET
 
+**Сайт:** https://bayernarmenia.github.io/ToolSet/ (английская версия — https://bayernarmenia.github.io/ToolSet/?lang=en)
+
+Публикуется через GitHub Pages из ветки `main` (корень репозитория): после push обновляется примерно за минуту.
+
 Одностраничная витрина ENAR без скролла: шапка с логотипом, анимированная сцена с товарами, футер в одну строку.
 Стек: HTML + CSS + JavaScript, без сборки.
 
