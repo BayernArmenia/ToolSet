@@ -17,7 +17,7 @@
         ispyder: { title: 'i-SPYDER',     sub: 'მაღალი სიხშირის ელექტრონული გარდამქმნელი' },
         dingo:   { title: 'DINGO',        sub: 'ექსცენტრიკული ელექტრო ვიბრატორი' },
         tornado: { title: 'TORNADO',      sub: 'მსუბუქი ვიბრაციული ლარტყა' },
-        tifon:   { title: 'TIFON E\u2060-\u2060BATT', sub: 'აკუმულატორული მოსაპრიალებელი მანქანა' }
+        tifon:   { title: 'TIFON 900',    sub: 'ბეტონის მოსაპრიალებელი მანქანა' }
       }
     },
     en: {
@@ -31,7 +31,7 @@
         ispyder: { title: 'i-SPYDER',     sub: 'High-frequency electronic converter' },
         dingo:   { title: 'DINGO',        sub: 'Eccentric electric vibrator' },
         tornado: { title: 'TORNADO',      sub: 'Light vibrating screed' },
-        tifon:   { title: 'TIFON E\u2060-\u2060BATT', sub: 'Battery power trowel' }
+        tifon:   { title: 'TIFON 900',    sub: 'Power trowel' }
       }
     }
   };

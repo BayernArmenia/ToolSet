@@ -14,17 +14,14 @@ python -m http.server 5510
 ## Что где
 
 - `index.html` — разметка. Товары — блоки `<a class="slide">`: картинка, `data-key`, `href` — страница модели на enargroup.com.
-  Модели: ZEN-L, REN 655, i-SPYDER, DINGO, TORNADO, TIFON E-BATT.
+  Модели: ZEN-L, REN 655, i-SPYDER, DINGO, TORNADO, TIFON 900.
 - Языки: грузинский (по умолчанию) и английский. Все тексты — в словаре `I18N` в начале `assets/js/main.js`.
   Выбор языка запоминается; ссылка на английскую версию — `?lang=en`.
 - `assets/css/style.css` — стили и анимации. Время показа одного товара — `--slide`.
 - `assets/js/main.js` — автосмена, прогресс, параллакс, свайп.
-- Фото моделей сейчас грузятся напрямую с enargroup.com (сервер ENAR не отдаёт файлы скриптам).
-  Чтобы хранить их локально: положить PNG/WebP в `assets/img/products/` и поменять `src` у `<img>` в слайдах.
+- `assets/img/products/` — фото моделей (webp, прозрачный фон). Исходники с enargroup.com — в `media/`.
 - `assets/img/logo.svg` — логотип для тёмного фона, `logo-dark.svg` — для светлого. Векторизованы из `media/` (JPEG).
 
 ## TODO
-
-- Фото моделей ENAR — сохранить локально (см. выше).
 
 - Вычитать грузинские названия товаров носителем языка.
