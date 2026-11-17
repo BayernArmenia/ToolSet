@@ -9,7 +9,7 @@
     ka: {
       eyebrow: 'ბეტონის ტექნიკა',
       cta: 'ნახეთ ENAR-ის საიტზე',
-      address: 'თბილისი, საქართველო',
+      address: 'ვიქტორ კუპრაძის ქ. 20, თბილისი',
       products: 'პროდუქცია',
       items: {
         pump:     { title: 'წყლის ტუმბო',                    sub: 'წყლის გადატუმბვა' },
@@ -23,7 +23,7 @@
     en: {
       eyebrow: 'Concrete equipment',
       cta: 'View on ENAR website',
-      address: 'Tbilisi, Georgia',
+      address: '20 Viktor Kupradze St, Tbilisi',
       products: 'Products',
       items: {
         pump:     { title: 'Water pump',                 sub: 'Water pumping' },

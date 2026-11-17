@@ -23,5 +23,5 @@ python -m http.server 5510
 ## TODO
 
 - Логотип TOOLSET (сейчас текстовая заглушка в `<header>`).
-- Адрес (`I18N.*.address` в main.js), телефон, Facebook и Instagram TOOLSET — сейчас заглушки в футере.
+- Телефон, Facebook и Instagram TOOLSET — сейчас заглушки в футере.
 - Вычитать грузинские названия товаров носителем языка.
